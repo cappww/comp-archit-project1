@@ -1,0 +1,24 @@
+0011000000000000 ; The program will be stored, starting with location x3000.
+0011000100000000 ; Fills this location with address x3100, where A is located.
+0011000100000001 ; Fills this location with address x3101, where B is located.
+0011000100000010 ; Fills this location with address x3102 where Y will be stored.
+0011000100000011 ; Fills this location with address x3102 where Z will be stored.
+1010000111111011 ; Loads value of A into register R0.
+1010001111111011 ; Loads value of B into register R1.
+1001001001111111 ; Makes R1 its own compliment in order to turn the value negative.
+0001001001100001 ; Adds 1 to R1 to make it the negative value of the divisor, B.
+0101010010100000 ; Clears the register R2.
+0001010010111111 ; Makes the value of register R2 to be -1.
+0001010010100001 ; Beginning of the loop, adds 1 to R2.
+0001000000000001 ; Subtracts the value B from A, stores in R0.
+0000001111111101 ; Enters into another iteration of the loop if R0 is positive.
+0000100000000001 ; Branches to a set of instructions if R0 is negative.
+0000010000000100 ; Branches to a set of different instructions if R0 is zero.
+1001001001111111 ; Makes R1 its own compliment if the value of R0 was negative.
+0001001001100001 ; Adds 1 to R1 to make it the value of the divisor B.
+0001000000000001 ; Adds R1 to R0 to make the value of the remainder.
+0000111000000001 ; Branches to the final instructions of the program.
+0001010010100001 ; Adds 1 to the quotient R2 if R0 was zero to compensate.
+1011010111101101 ; Stores the quotient, R2, into the memory of address Y.
+1011000111101101 ; Stores the remainder, R0, into the memory of address Z.
+1111000000100101 ; Halts the program.

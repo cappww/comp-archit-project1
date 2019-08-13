@@ -1,0 +1,13 @@
+// Symbol table
+// Scope level 0:
+//	Symbol Name       Page Address
+//	----------------  ------------
+//	A                 3000
+//	B                 3001
+//	Y                 3002
+//	Z                 3003
+//	ITER              300A
+//	NEG               300F
+//	ZERO              3013
+//	FIN               3014
+
